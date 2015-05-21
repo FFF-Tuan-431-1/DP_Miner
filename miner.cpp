@@ -16,11 +16,11 @@ int getMaxGold(){
 //            maxGold[i][j] = max(gold[i][j] + maxGold[i + 1][j], gold[i][j] + maxGold[i + 1][j + 1]);
             if (maxGold[i + 1][j] > maxGold[i + 1][j + 1]) {
                 maxGold[i][j] = gold[i][j] + maxGold[i + 1][j];
-                route[i][j] = 0;
+                route[i][j] = false;
             }
             else{
                 maxGold[i][j] = gold[i][j] + maxGold[i + 1][j + 1] ;
-                route[i][j] = 1 ;
+                route[i][j] = true ;
             }
         }
     }
